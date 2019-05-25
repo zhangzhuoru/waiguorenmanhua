@@ -1,0 +1,157 @@
+.starter-template{
+	margin-top: 72px;
+}
+.cat-list {
+
+    padding-bottom: 22px;
+    border-bottom: 1px solid #ededed;
+    font-size: 13px;
+    display: block;
+}
+.ticai{
+	    margin-right: 6px;
+	        display: block;
+    float: left;
+	    
+}
+ .clearfix:after {  content: ""; display: block; height: 0; clear: both; visibility: hidden;  }   
+
+ .clearfix {*zoom: 1;}  	
+.fenlei {
+    position: relative;
+    display: inline-block;
+    color: #252525;
+    padding: 0 6px;
+        float: left;
+margin-bottom: 23px;
+    margin-left: 8px;
+        text-decoration: none;
+        	cursor: pointer;
+            font-family: "PingFang SC",'Microsoft YaHei';
+}
+.fenleiact{
+	color: #fd113a!important;
+}
+.fenleiact:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: -13px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #fd113a;
+}
+.hottitle {
+	border-left: 2px solid red;
+	display: block;
+	position: relative;
+	height: 26px;
+	padding: 0 10px;
+	overflow: hidden;
+	margin: 30px 0;
+}
+
+.hottxt {
+	height: 2rem;
+	font-size: 2rem;
+	font-weight: 600;
+	width: 150px;
+	height: 40px;
+	display: block;
+	float: left;
+}
+.img-responsive {
+	width: 100%;
+	background-size: cover;
+}
+
+.rit {
+	width: 40px;
+	height: 25px;
+	position: absolute;
+	top: 9px;
+	right: 0px;
+	cursor:pointer
+}
+
+.navbar-right {
+	line-height: 2rem;
+	height: 2rem;
+	float: right;
+	width: 20%;
+	display: block;
+}
+
+
+
+.nub-box {
+	width: 5%;
+	height: 3%;
+	margin: 5% 0 0 2%;
+	line-height: 22px;
+	text-align: center;
+	display: inline;
+	border-radius: 50%;
+	float: left;
+}
+.manhuatit {
+	line-height: 2.8rem;
+	height: 2.8rem;
+	font-size: 1.6rem;
+	font-weight: 600;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.manhuabar {
+	line-height: 1.2rem;
+	height: 1.2rem;
+	font-size: 1.2rem;
+	font-weight: 400;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.img-box {
+	width: 100%;
+	height: 0;
+	padding-bottom: 130%;
+	overflow: hidden;
+}
+.padtop {
+	padding: 10px;
+}
+.btmbox{
+	    width: 326px;
+    height: 40px;
+    margin: 20px auto;
+    text-align: center;
+}
+.btm {
+
+    width: 96px;
+    height: 38px;
+    border: 1px solid #e6e6e6;
+    background: #ff5e06;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    line-height: 38px;
+    display: inline-block;
+}
+#page_select {
+    width: 96px;
+    height: 38px;
+    text-align: center;
+    float: left;
+    margin: 0 15px;
+}
+.fl{
+		float: left;
+}
+.fr{
+	float: right;
+}
