@@ -7,3 +7,6 @@
 1.使用Bootstrap，和JQuery框架完成项目；</br>
 2.使用location.href实现各个页面跳转；</br>
 3.使用ajax实现实时漫画更新，局部加载。</br>
+# 演示视频：</br>
+https://cloud-minapp-25198.cloud.ifanrusercontent.com/1hV9xzdkBrhKtHzs.wmv</br>
+https://cloud-minapp-25198.cloud.ifanrusercontent.com/1hV9sUzO0Wx1azb3.wmv
