@@ -1,4 +1,5 @@
 $(function() {
+	//获取下拉框的值
 	var select=$('#page_select')
 	
 	select.change(function() {　　　　　　　
@@ -6,6 +7,7 @@ $(function() {
 　　　　location.href = 'read.html?index=' + p1 + '&id=' + id;　　　　
 	})
 	
+	//获取章节，id
 	var chapter = localStorage.getItem('chapters');
 	var item = chapter == undefined ? null : JSON.parse(chapter);
 	
@@ -13,8 +15,9 @@ $(function() {
 	var ids = id == undefined ? null : JSON.parse(id);
 	
 	console.log(item)
-
-	//获取查询参数
+	//数据请求加载中
+	$('#page_select').loading(1);
+	//获取查询章节参数
 	var queryParams = location.search.slice(1).split('&'); //['type=meizhuang', 'id=mz1']
 
 	var params = {};
@@ -36,7 +39,7 @@ $('.next').on('click', function() {　　　　　　
 		if(index==images.length){
 			
 			if(confirm("当前章节已读完,是否跳到下一章")){
-			nextmulus()
+				nextmulus()
 	
 			}
 		}else{
@@ -96,12 +99,13 @@ $('.prve').on('click', function() {　　　　　　
 			//data: 服务器响应的数据
 			addheader(headertit, images)
 			console.log(images)
-
+			$('.loadingbg').hide();
 		},
 
 		//请求失败
 		error: function(err) {
 			console.log('err ==>', err);
+			$('.loadingbg').hide();
 		}
 	})
 	
@@ -175,10 +179,13 @@ $('.prve').on('click', function() {　　　　　　
 
 		$('#header-box').append($divheader);
 
-		var $divimg = $(`<img class="item-img col-xs-8  col-xs-offset-2" src="http://cdn.mangaeden.com/mangasimg/${im[index-1][1]}">`)
+		var $divimg = $(`<img class="item-img col-xs-8  col-xs-offset-2" data-original="http://cdn.mangaeden.com/mangasimg/${im[index-1][1]}">`)
 
 		$('#img-box').append($divimg);
-
+		$("img").lazyload({
+			placeholder : "../img/loading1.gif", //用图片提前占位
+			effect: "fadeIn"
+		});
 		for(var j = 1; j < im.length + 1; j++) {
 
 			var $divsele = $(`<option value="${j}" >第${j}页</option>`);

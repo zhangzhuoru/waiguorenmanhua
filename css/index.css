@@ -338,6 +338,7 @@ body {
 	width: 100%;
 	height: 200px;
 	background-color: white;
+	margin-bottom: 60px;
 }
 
 #bg-banner {
@@ -654,7 +655,7 @@ body {
 .app_menu ul li {
 	margin: 0px;
 	float: left;
-	width: 20%;
+	width: 33%;
 }
 
 .app_menu ul li a {

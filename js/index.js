@@ -1,11 +1,18 @@
 window.onload = function() {
 	$('.rit').on('click', function() {
-		location.href = 'html/more.html'
+		location.href = 'html/more.html?select=1'
 	})
-	
+	$('#gomore').on('click', function() {
+		location.href = 'html/more.html?select=1'
+	})
+	$('#somemore').on('click', function() {
+		location.href = 'html/more.html?select=2'
+	})
+	$('.rit').loading();
 	var manhua = localStorage.getItem('manhua');
 	var manhualist = manhua == undefined ? null : JSON.parse(manhua);
 	if(manhualist) {
+		$('.loadingbg').hide();
 		adddiv(manhualist);
 		addEvent();
 		addphdiv(manhualist);
@@ -25,8 +32,8 @@ window.onload = function() {
 			//请求成功
 			success: function(data) {
 
-				console.log('success');
-
+				console.log('success1111111');
+				$('.loadingbg').hide();
 				//data: 服务器响应的数据
 				var d = data.manga;
 
@@ -55,29 +62,36 @@ window.onload = function() {
 		var hot = d.slice(0, 6);
 		console.log('success', hot);
 		for(var i = 0; i < hot.length; i++) {
-			var $div = $('<div class="col-sm-6 col-md-4 col-lg-2 padtop col-xs-6" id="' + hot[i].i + '">' +
-				'<div class="img-box">' +
-				'<img class="img-responsive" src="http://cdn.mangaeden.com/mangasimg/' + hot[i].im + '">' +
-				'</div>' +
-				'<div class="manhuatit">' + hot[i].t + '</div>' +
-				'<div class="manhuabar">标签：' + hot[i].c.join(',')+ '</div>');
+			var $div = $(`<div class="col-sm-6 col-md-4 col-lg-2 padtop col-xs-6" id="${hot[i].i}"> 
+			<div class="img-box"> 
+			<img class="img-responsive" data-original="${hot[i].im ?' http://cdn.mangaeden.com/mangasimg/'+hot[i].im:'./img/oo.png'}"/>
+			</div> 
+			<div class="manhuatit"> ${hot[i].t}</div> 
+			<div class="manhuabar">标签：${hot[i].c.join(',')}</div>
+			</div>`);
 
 			$('#box').append($div);
 
 		}
-
+		
+		var arrIndex = Math.floor(Math.random() * 500);
+		now = d.slice(arrIndex,arrIndex+6);
 		console.log('success', now);
 		for(var j = 0; j < now.length; j++) {
-			var $div2 = $('<div class="col-sm-6 col-md-4 col-lg-2 padtop col-xs-6" id="' + now[j].i + '">' +
-				'<div class="img-box">' +
-				'<img class="img-responsive" src="http://cdn.mangaeden.com/mangasimg/' + now[j].im + '">' +
-				'</div>' +
-				'<div class="manhuatit">' + now[j].t + '</div>' +
-				'<div class="manhuabar">标签：' + now[j].c.join(',') + '</div>');
+			var $div2 = $(`<div class="col-sm-6 col-md-4 col-lg-2 padtop col-xs-6" id="${now[j].i}">
+			<div class="img-box">
+			<img class="img-responsive" data-original="${now[j].im ?' http://cdn.mangaeden.com/mangasimg/'+now[j].im:'./img/oo.png'}"/>
+			</div>
+			<div class="manhuatit"> ${now[j].t} </div>
+			<div class="manhuabar">标签： ${now[j].c.join(',')} </div>`);
 
 			$('#box2').append($div2);
 
 		}
+		$("img").lazyload({
+			placeholder : "./img/loading.gif", //用图片提前占位
+			effect: "fadeIn"
+		});
 	}
 
 	function addphdiv(d) {

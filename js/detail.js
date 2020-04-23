@@ -28,16 +28,51 @@ $(function() {
 
 		})
 	}
+	function reverseimgbox() {
+
+		$('.reverseimgbox>img').on('click', function() {
+			console.log(1111111111)
+			$('#chaptersbox').empty()
+			$('#box3').empty()
+			item.chapters.reverse();
+			addmulu(item)
+			addEvent();
+		})
+	}
+
+	function moreEvent() {
+
+		var $colItem = $('.padtop');
+
+		$colItem.off('click').on('click', function() {
+
+			//获取当前节点父元素
+			var parent = $(this).parents('.row');
+
+			//商品id
+			var id = $(this).attr('id');
+
+			//商品id
+			localStorage.setItem('id', JSON.stringify(id));
+			location.href = 'detail.html?id=' + id;
+
+		})
+	}
+
 	$('#zk').off('click').on('click', function() {
 		if($('.episode-list')[0].style.webkitLineClamp == "unset"){
 			$('.episode-list')[0].style.webkitLineClamp = ""
+			$('#zk').text('显示全部章节')
 		}
 		else{
 			$('.episode-list')[0].style.webkitLineClamp = "unset";
+			$('#zk').text('回到顶部')
 		}
 		
-		})
-	
+	})
+
+	$('#zk').loading(1);
+
 	$.get({
 		//请求服务器地址
 		url: `https://www.mangaeden.com/api/manga/${params.id}`,
@@ -47,18 +82,27 @@ $(function() {
 			console.log('data', item);
 			//data: 服务器响应的数据
 			item = data;
-			console.log('data', item.chapters);
+
+			$('.loadingbg').hide();
+			item.chapters.map((value,index,array) => {
+				　　value.push(index)
+				});
+			// console.log('data', item.chapters);
 			localStorage.setItem('chapters', JSON.stringify(item));
 			adddetail(item);
 			addmulu(item);
 			addEvent();
+			reverseimgbox();
 		},
 		//请求失败
 		error: function(err) {
 			console.log('err ==>', err);
 		}
 	})
-
+	$('.rit').on('click', function() {
+		location.href = 'html/more.html'
+	})
+	
 
 			var d = manhualist.slice(arrIndex,arrIndex+12);
 
@@ -66,14 +110,18 @@ $(function() {
 			for(var i = 0; i < d.length; i++) {
 				var $div = $(`<div class="col-sm-6 col-md-4 col-lg-2 padtop col-xs-6" id="${d[i].i}"> 
 			<div class="img-box"> 
-			<img class="img-responsive" src="${d[i].im ?' http://cdn.mangaeden.com/mangasimg/'+d[i].im:'../img/oo.png'}"/> 
+				<img class="img-responsive" data-original="${d[i].im ?' http://cdn.mangaeden.com/mangasimg/'+d[i].im:'../img/oo.png'}"/>
 			</div> 
 			<div class="manhuatit"> ${d[i].t}</div> 
 			<div class="manhuabar">标签：${d[i].c.join(',')}</div>
 			</div>`);
 
 				$('#box').append($div);
-
+				$("img").lazyload({
+					placeholder : "../img/loading.gif", //用图片提前占位
+					effect: "fadeIn"
+				});
+				moreEvent();
 			}
 
 	function adddetail(item) {
@@ -100,12 +148,14 @@ $(function() {
 	}
 
 	function addmulu(item) {
-		var $divmulu = $(`<span class="episode-title">章节</span>
-              <span class="episode-total">全${item.chapters_len}话</span>`)
+		var $divmulu = $(`
+			<span class="episode-title">章节</span>
+            <span class="episode-total">全${item.chapters_len}话</span>
+			`)
 
-		$('#box-mulu').append($divmulu);
+		$('#chaptersbox').append($divmulu);
 		for(var j = 0; j < item.chapters.length; j++) {
-			var $div3 = $(`<li class="manga-chapters"id='${j}'>${item.chapters[j][0]}</li>`);
+			var $div3 = $(`<li class="manga-chapters"id='${item.chapters[j][4]}'>${item.chapters[j][0]}</li>`);
 
 			$('#box3').append($div3);
 		}

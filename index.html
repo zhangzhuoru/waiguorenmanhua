@@ -9,10 +9,15 @@
 		<meta name="format-detection" content="email=no" />
 		<meta name="referrer" content="no-referrer" />
 		<title>歪果仁漫画</title>
+		<script src="bootstrap-3.3.7/jquery-3.2.1.min.js" type="text/javascript"></script>
+		<script src="bootstrap-3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="js/loading.js" type="text/javascript"></script>
+		<script src="js/lazyload.js" type="text/javascript"></script>
+		<script src="js/index.js" type="text/javascript"></script>
 		<link href="bootstrap-3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
 		<link href="css/index.css" type="text/css" rel="stylesheet" />
 	
-
+		
 	</head>
 
 	<body>
@@ -32,19 +37,10 @@
 										<a href="#">首页</a>
 									</li>
 									<li>
-										<a href="#">连载</a>
+										<a href="./html/more.html?select=1">精选</a>
 									</li>
 									<li>
-										<a href="#">完结</a>
-									</li>
-									<li>
-										<a href="#">更新</a>
-									</li>
-									<li>
-										<a href="#">排行</a>
-									</li>
-									<li>
-										<a href="#">分类</a>
+										<a href="./html/more.html?select=2">分类</a>
 									</li>
 								</ul>
 							</div>
@@ -73,19 +69,10 @@
 								<a href="#">首页</a>
 							</li>
 							<li>
-								<a href="#">连载</a>
+								<a href="./html/more.html?select=1">精选</a>
 							</li>
 							<li>
-								<a href="#">完结</a>
-							</li>
-							<li>
-								<a href="#">更新</a>
-							</li>
-							<li>
-								<a href="#">排行</a>
-							</li>
-							<li>
-								<a href="#">分类</a>
+								<a href="./html/more.html?select=2">分类</a>
 							</li>
 							<li>
 								<a href="#">关于土豪漫画</a>
@@ -119,16 +106,16 @@
 				</div>
 				<!--移动端上方 -->
 				<div class="app_top">
-					<span id="bodybrand">心情惬意，来杯咖啡吧 ☕</span>
+					<span id="bodybrand">心情惬意，来看漫画吧 ☕</span>
 				</div>
 				<!--内容-->
 				<div class="col-sm-8" id="content">
 
-					<div class="container">
+					<!-- <div class="container"> -->
 						<!--轮播-->
-						<div id="mycarousel" class="carousel slide" data-ride="carousel">
+						<!-- <div id="mycarousel" class="carousel slide" data-ride="carousel"> -->
 							<!--轮播图片-->
-							<div class="carousel-inner">
+							<!-- <div class="carousel-inner">
 								<div class="item active">
 									<img src="img/1.jpg" alt="歪果仁漫画" />
 								</div>
@@ -145,12 +132,12 @@
 							<a class="carousel-control left" href="#mycarousel" data-slide="next">
 								<span _ngcontent-c3="" aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span>
 							</a>
-						</div>
+						</div> -->
 						<!--广告 -->
-						<div id="ad">
+						<!-- <div id="ad">
 							<span class="label label-default">广告</span>
 						</div>
-					</div>
+					</div> -->
 					<!--banner2 -->
 					<div class="boxpad">
 						<div id="bannerdiv2">
@@ -228,16 +215,16 @@
 					<div id="bannerdiv3">
 						<div id="bg-banner" class="wrapper">
 							<div id="bg-body">
-								<h2>星享俱乐部</h2>
-								<p>开启您的星享之旅，星星越多、会员等级越高、好礼越丰富。
+								<h2>漫画俱乐部</h2>
+								<p>开启您的漫画之旅，看得越多、会员等级越高、好礼越丰富。
 									<a href="#">了解更多 ›</a>
 								</p>
 								<div id="bg-btn">
 									<button type="button" class="btn btn-default">
-                    <span style="color: rgb(54, 165, 112); font-size: 16px;">登录</span>
+                    <span style="color: rgb(54, 165, 112); font-size: 16px;">感兴趣</span>
                   </button>
 									<button type="button" class="btn btn-default">
-                    <span style="color: rgb(54, 165, 112); font-size: 16px;">注册</span>
+                    <span style="color: rgb(54, 165, 112); font-size: 16px;">点赞</span>
                   </button>
 								</div>
 							</div>
@@ -258,7 +245,7 @@
 		<div class="app_menu">
 			<ul id="appMenu">
 				<li>
-					<a href="#" class="active">
+					<a class="active">
 						<span class="icons">
           <img src="img/appIcon/icon-home.svg" class="iactive"/>
           <img src="img/appIcon/icon-home-active.svg"/>
@@ -266,35 +253,18 @@
 						<div>主页</div>
 					</a>
 				</li>
+
 				<li>
-					<a href="#">
-						<span class="icons">
-          <img src="img/appIcon/icon-stores.svg" />
-          <img src="img/appIcon/icon-stores-active.svg" class="iactive"/>
-          </span>
-						<div>门店</div>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<span class="icons">
-          <img src="img/appIcon/icon-account.svg" />
-          <img src="img/appIcon/icon-account-active.svg" class="iactive"/>
-          </span>
-						<div>我的账户</div>
-					</a>
-				</li>
-				<li>
-					<a href="#">
+					<a id="somemore">
 						<span class="icons">
           <img src="img/appIcon/icon-menu.svg" />
           <img src="img/appIcon/icon-menu-active.svg" class="iactive"/>
           </span>
-						<div>菜单</div>
+						<div>分类</div>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a id="gomore">
 						<span class="icons">
           <img src="img/appIcon/icon-more.svg" />
           <img src="img/appIcon/icon-more-active.svg" class="iactive"/>
@@ -304,9 +274,7 @@
 				</li>
 			</ul>
 		</div>
-		<script src="bootstrap-3.3.7/jquery-3.2.1.min.js" type="text/javascript"></script>
-		<script src="bootstrap-3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
-		<script src="js/index.js" type="text/javascript"></script>
+		
 	</body>
 	
 </html>

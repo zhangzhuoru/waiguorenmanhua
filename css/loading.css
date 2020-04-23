@@ -1,0 +1,39 @@
+#loading {
+	
+	height:100px;
+    width:100px;
+    margin:auto;
+	border-radius:50px;
+	margin-top:30vh;
+	color:white;
+	text-align:center;
+	line-height:100px;
+	box-shadow:-25px -25px 1px rgba(40,200,255,0.6),-35px 0px 1px rgba(255,120,100,0.6),-25px 25px 1px rgba(255,80,150,0.6),0px 35px 1px rgba(150,80,139,0.6),25px 25px 1px rgba(156,110,245,0.6),25px -25px 1px rgba(93,124,228,0.6),0px -35px 1px rgba(112,130,255,0.6),35px 0px 1px rgba(141,109,200,0.6);
+	transition:all 1s;
+	animation:loading 1s ease-in-out infinite;
+	animation-direction:alternate;
+	-webkit-animation:loading 1s ease-in-out infinite;
+	-webkit-animation-direction:alternate;
+}
+@keyframes loading {
+	0% {
+	box-shadow:-25px -25px 1px rgba(40,200,255,0.6),-35px 0px 1px rgba(255,120,100,0.6),-25px 25px 1px rgba(255,80,150,0.6),0px 35px 1px rgba(150,80,139,0.6),25px 25px 1px rgba(156,110,245,0.6),25px -25px 1px rgba(93,124,228,0.6),0px -35px 1px rgba(112,130,255,0.6),35px 0px 1px rgba(141,109,200,0.6);
+	transform:rotate(0deg);
+}
+50% {
+	box-shadow:-5px -5px 1px rgba(40,200,255,0.6),-7px 0px 1px rgba(255,120,100,0.6),-5px 5px 1px rgba(255,80,150,0.6),0px 7px 1px rgba(150,80,139,0.6),5px 5px 1px rgba(156,110,245,0.6),5px -5px 1px rgba(93,124,228,0.6),0px -7px 1px rgba(112,130,255,0.6),7px 0px 1px rgba(141,109,200,0.6);
+	transform:rotate(360deg);
+}
+100% {
+	box-shadow:-100px -100px 1px rgba(40,200,255,0.6),-140px 0px 1px rgba(255,120,100,0.6),-100px 100px 1px rgba(255,80,150,0.6),0px 140px 1px rgba(150,80,139,0.6),100px 100px 1px rgba(156,110,245,0.6),100px -100px 1px rgba(93,124,228,0.6),0px -140px 1px rgba(112,130,255,0.6),140px 0px 1px rgba(141,109,200,0.6);
+	background-color:darkgray;
+	transform:rotate(360deg);
+}
+}
+.loadingbg{
+	background: rgba(0,0,0,0.2);
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+    z-index: 9999;
+}

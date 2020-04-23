@@ -161,6 +161,7 @@ body {
 	font-size: 28px;
 	color: red;
 	margin-top: -8px;
+	text-decoration: none;
 }
 
 #navbar #navbody ul li a {
@@ -228,6 +229,7 @@ body {
 /*移动端样式 */
 
 .app_menu {
+	z-index: 9999;
 	display: none;
 	position: fixed;
 	left: 0px;
@@ -248,7 +250,7 @@ body {
 .app_menu ul li {
 	margin: 0px;
 	float: left;
-	width: 20%;
+	width: 33%;
 }
 
 .app_menu ul li a {
@@ -361,9 +363,9 @@ body {
 	#ad {
 		opacity: 1;
 	}
-	#bannerdiv4 {
+	/* #bannerdiv4 {
 		height: 1136px;
-	}
+	} */
 	#shop ul li {
 		margin: 30px 30px;
 		margin-top: 10px;
@@ -374,7 +376,29 @@ body {
 	#bg-banner #bg-body {
 		width: 100%;
 	}
+	.this-box{
+		width: 300px!important;
+		float: none!important;
+	}
+	#bannerdiv3 {
+		min-height: 690px!important;
+		margin-top: 0px!important;
+	}
+	.this-box h1 {
+		line-height: 50px!important;
+		display: block!important;
+	}
+	.this-box .remind {
+		padding-left: 0px!important;
+	}
+	.block {
+		margin-right: 10px!important;
+	}
+	.content {
+		width: 300px!important;
+	}
 }
+
 
 
 /*  iphone:w<768px  */
@@ -679,4 +703,17 @@ body {
 .max80{
 	width: 90%;
 	margin: 0 auto;
+}
+#box-mulu{
+	width: 88%;
+	display: flex;
+	justify-content: space-between;
+}
+.reverseimgbox{
+	width: 18px;
+	height: 18px;
+}
+.reverseimgbox>img{
+	width: 100%;
+	height: 100%;
 }

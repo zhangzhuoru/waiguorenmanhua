@@ -20,28 +20,19 @@
 				<div class="col-sm-4 nav1" id="nav">
 					<div id="navdiv">
 						<nav class="navbar navbar-default" role="navigation" id="navbar">
-							<div class="navbar-header" id="navheader">
+							<a class="navbar-header" id="navheader" href="../index.html">
 								歪果仁漫画
-							</div>
+							</a>
 							<div id="navbody">
 								<ul class="nav navbar-nav">
 									<li>
-										<a href="#">首页</a>
+										<a href="../index.html">首页</a>
 									</li>
 									<li>
-										<a href="#">连载</a>
+										<a href="./more.html?select=1">精选</a>
 									</li>
 									<li>
-										<a href="#">完结</a>
-									</li>
-									<li>
-										<a href="#">更新</a>
-									</li>
-									<li>
-										<a href="#">排行</a>
-									</li>
-									<li>
-										<a href="#">分类</a>
+										<a href="./more.html?select=2">分类</a>
 									</li>
 								</ul>
 							</div>
@@ -76,7 +67,12 @@
 					<div>
             <div class="episode-header">
             	<div id="box-mulu" class="box">
-
+					<div id ="chaptersbox">
+						
+					</div>
+					<div class='reverseimgbox'>
+						<img src="../img/reverse.png" alt=""/>
+					</div>
 								</div>
 
             </div>
@@ -118,31 +114,14 @@
 						<div>主页</div>
 					</a>
 				</li>
-				<li>
-					<a href="#">
-						<span class="icons">
-          <img src="../img/appIcon/icon-stores.svg" />
-          <img src="../img/appIcon/icon-stores-active.svg" class="iactive"/>
-          </span>
-						<div>门店</div>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<span class="icons">
-          <img src="../img/appIcon/icon-account.svg" />
-          <img src="../img/appIcon/icon-account-active.svg" class="iactive"/>
-          </span>
-						<div>我的账户</div>
-					</a>
-				</li>
+
 				<li>
 					<a href="#">
 						<span class="icons">
           <img src="../img/appIcon/icon-menu.svg" />
           <img src="../img/appIcon/icon-menu-active.svg" class="iactive"/>
           </span>
-						<div>菜单</div>
+						<div>分类</div>
 					</a>
 				</li>
 				<li>
@@ -164,7 +143,8 @@
 	<script src="../bootstrap-3.3.7/jquery-3.2.1.min.js"></script>
 
 	<script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
-
+	<script src="../js/lazyload.js" type="text/javascript"></script>
+	<script src="../js/loading.js" type="text/javascript"></script>
 	<script src="../js/detail.js"></script>
 </body>
 </html>
