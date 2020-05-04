@@ -237,7 +237,11 @@ window.onload = function () {
 
 				adddiv(hot1, page)
 			}
-
+			$('body,html').animate({
+				scrollTop: 250
+			  },
+			  500);
+			  return false;
 		})
 	}
 	//选择想要的页数跳转
@@ -269,6 +273,8 @@ window.onload = function () {
 
 				adddiv(hot, page)
 			}
+			$('html ,body').animate({scrollTop: 250}, 300);
+            return false;
 		})
 
 	}

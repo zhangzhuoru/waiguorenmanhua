@@ -29,12 +29,9 @@
     min-width: 960px;
     max-width: 80%;
     width: 80%;
-    _width: expression(this.width<960px ? 960px: this.width<80%?this.width:80%);
+    /* _width: expression(this.width<960px ? 960px: this.width<80%?this.width:80%); */
     margin: 0 auto;
 }
-.read {
-
-  }
   .header .crumbs {
     float: left;
     font-size: 12px;
@@ -64,10 +61,10 @@
 }
 
   .container {
-    // width: 1000%;
+    /* // width: 1000%; */
 
     margin-top: 56px;
-    // transform: translateX(0);
+    /* // transform: translateX(0); */
     height: auto!important;
     min-height: 0px;
         width: auto;
@@ -150,77 +147,135 @@
 	float: right;
 }
 #mb_box{
-            width: 100%;
-            height: 100%;
-            z-index: 99999;
-            position: fixed;
-						background-color: black;
-            top: 0;
-            left: 0;
-            opacity: 0.6;
-        }
-        #mb_con{
-            z-index: 999999;
-            width: 400px;
-            position: fixed;
-            background-color: White;
-            border-radius: 15px
-        }
-        #mb_tit{
-            display: block;
-            font-size: 14px;
-            color: #444;
-            padding: 10px 15px;
-            background-color: #DDD;
-           border-radius: 15px 15px 0 0;
-            border-bottom: 3px solid #009BFE;
-            font-weight: bold
-        }
-        #mb_msg{
-            padding: 20px;
-            line-height: 20px;
-            border-bottom: 1px dashed #DDD;
-            font-size: 13px
-        }
-        #mb_ico{
-            display: block;
-            position: absolute;
-            right: 10px;
-            top: 9px;
-            border: 1px solid Gray;
-            width: 18px;
-            height: 18px;
-            text-align: center;
-            line-height: 16px;
-            cursor: pointer;
-            border-radius: 12px;
-            font-family: 微软雅黑
-        }
-        #mb_btnbox{
-            margin: 15px 0 10px 0;
-            text-align: center
-        }
-        #mb_btn_ok,#mb_btn_no{
-            width: 85px;
-            height: 30px;
-            color: white;
-            border: none
-        }
-        #mb_btn_ok{
-            background-color: #168bbb
-        }
-        #mb_btn_no{
-            background-color: gray;
-            margin-left: 20px
-        }
-        //右上角关闭按钮hover样式
-        #mb_ico:hover{
-            
-                background-color: Red;
-                color: White
-            
-        };
-        #mb_ico{
-        	background-color: #DDD;
-                color: black
-        }
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    position: fixed;
+    background-color: black;
+    top: 0;
+    left: 0;
+    opacity: 0.6;
+}
+#mb_con{
+    z-index: 999999;
+    width: 400px;
+    position: fixed;
+    background-color: White;
+    border-radius: 15px
+}
+#mb_tit{
+    display: block;
+    font-size: 14px;
+    color: #444;
+    padding: 10px 15px;
+    background-color: #DDD;
+    border-radius: 15px 15px 0 0;
+    border-bottom: 3px solid #009BFE;
+    font-weight: bold
+}
+#mb_msg{
+    padding: 20px;
+    line-height: 20px;
+    border-bottom: 1px dashed #DDD;
+    font-size: 13px
+}
+#mb_ico{
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 9px;
+    border: 1px solid Gray;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    line-height: 16px;
+    cursor: pointer;
+    border-radius: 12px;
+    font-family: 微软雅黑
+}
+#mb_btnbox{
+    margin: 15px 0 10px 0;
+    text-align: center
+}
+#mb_btn_ok,#mb_btn_no{
+    width: 85px;
+    height: 30px;
+    color: white;
+    border: none
+}
+#mb_btn_ok{
+    background-color: #168bbb
+}
+#mb_btn_no{
+    background-color: gray;
+    margin-left: 20px
+}
+/* //右上角关闭按钮hover样式 */
+#mb_ico:hover{
+    
+        background-color: Red;
+        color: White
+    
+};
+#mb_ico{
+  background-color: #DDD;
+        color: black
+}
+@media screen and (max-width: 450px) {
+	/*移动端CSS常规设置    */
+	body {
+		font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+		/*使用无衬线字体*/
+	}
+	a,
+	img {
+		-webkit-touch-callout: none;
+		/*禁止长按链接与图片弹出菜单*/
+	}
+	html,
+	body {
+		-webkit-user-select: none;
+		/*禁止选中文本*/
+		user-select: none;
+	}
+	button,
+	input,
+	optgroup,
+	select,
+	textarea {
+		-webkit-appearance: none;
+		/*去掉webkit默认的表单样式*/
+	}
+	a,
+	button,
+	input,
+	optgroup,
+	select,
+	textarea {
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		/*去掉a、input和button点击时的蓝色外边框和灰色半透明背景*/
+	}
+	input::-webkit-input-placeholder {
+		color: #ccc;
+		/*修改webkit中input的planceholder样式*/
+	}
+	input:focus::-webkit-input-placeholder {
+		color: #f00;
+		/*修改webkit中focus状态下input的planceholder样式*/
+	}
+	body {
+		-webkit-text-size-adjust: 100%!important;
+		/*禁止IOS调整字体大小*/
+	}
+	input::-webkit-input-speech-button {
+		display: none;
+		/*隐藏Android的语音输入按钮*/
+	}
+	/* end */
+
+	.item-img {
+		width: 100%!important;
+    margin: 0!important;
+    margin-top: 10px!important;
+	}
+}
