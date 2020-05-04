@@ -126,7 +126,7 @@ $(function() {
 
 	function adddetail(item) {
 		var $div2 = $(`<div class="bg-cover"> 
-								<img src="${item.imageURL?item.imageURL:item.image?'http://cdn.mangaeden.com/mangasimg/'+item.image:'../img/oo.png'}" class="bg-tupan"/>
+								<img src="${item.image?'http://cdn.mangaeden.com/mangasimg/'+item.image:'../img/oo.png'}" class="bg-tupan"/>
 							</div>
 							
 							<div class="this-box"><h1> ${item.aka[0]}</h1><em class="remind">每周四更新</em><p class="subtitle">作者：${item.author}</p>
